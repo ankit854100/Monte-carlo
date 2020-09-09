@@ -1,0 +1,33 @@
+body{
+  background-color: #a2d5f2;
+  text-align: center;
+}
+
+h1{
+  padding: 20px;
+  color: #fff;
+}
+
+table{
+  margin: 10px auto;
+}
+
+th{
+  padding: 8px;
+}
+
+.header{
+  background-color: #1a1c20;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn{
+  margin: 10px;
+}
+
+#canvas{
+  background-color: white;
+  border: 1px solid white;
+  margin: 30px auto;
+  border: 1px solid #000;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MonteCarlo PI(𝛑)</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>MonteCarlo method of calculating 𝛑</h1>
+    </div>
+    <canvas id="canvas"></canvas>
+    <br>
+    <button type="button" name="button" id="start" class="btn btn-success" >start</button>
+    <button type="button" name="button" id="stop" class="btn btn-danger" >stop</button>
+    <button type="button" name="button"id="reset" class="btn btn-warning" >reset</button>
+    <br>
+
+    <table>
+      <tr class="border border-dark">
+        <th class="border border-dark" >inside points</th>
+        <th class="border border-dark" >outside points</th>
+        <th class="border border-dark" >total points</th>
+      </tr>
+      <tr >
+        <th id="inside" class="border border-dark ">0</th>
+        <th id="outside" class="border border-dark ">0</th>
+        <th id="total" class="border border-dark ">0</th>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th class="border border-dark">value of 𝛑:</th>
+
+      </tr>
+      <tr>
+        <th class="border border-dark" id="pi">0</th>
+      </tr>
+    </table>
+
+    <script src="index.js" charset="utf-8"></script>
+
+  </body>
+</html>
