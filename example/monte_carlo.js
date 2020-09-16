@@ -10,9 +10,6 @@ var content = {
 }
 
 var element = {
-  start : document.getElementById("start"),
-  stop: document.getElementById("stop"),
-  reset: document.getElementById("reset"),
   pi : document.getElementById("pi"),
   inside: document.getElementById("inside"),
   outside: document.getElementById("outside"),
@@ -54,13 +51,13 @@ async function draw(){
     if(dist < circle.r){
       points.pIn++;
       element.inside.innerHTML = points.pIn;
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "#9cada4";
     }
     else{
       points.pOut++;
 
       element.outside.innerHTML = points.pOut;
-      ctx.fillStyle = "green";
+      ctx.fillStyle = "#000";
     }
 
     points.pTotal++;
@@ -109,14 +106,40 @@ function reset(){
   element.pi.innerHTML = points.pi;
 }
 
-element.start.onclick = function (){
-  start();
+
+// injecting blockly into blocklyDiv
+var workSpace = Blockly.inject('blocklyDiv', {
+  toolbox: document.getElementById('toolbox'),
+  scrollbars: false
+});
+
+function runCode(){
+  window.LoopTrap = 1000;
+  Blockly.JavaScript.INFINITE_LOOP_TRAP =
+      'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+  var code = Blockly.JavaScript.workspaceToCode(workSpace);
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+
+  if(code === "start"){
+    start();
+  }
+  if(code === "stop"){
+    stop();
+  }
+  if(code === "reset"){
+    reset();
+  }
+
+  try {
+    eval(code);
+  } catch (e) {
+    alert(e);
+  }
+
 }
 
-element.stop.onclick = function(){
-  stop();
-}
-
-element.reset.onclick = function(){
-  reset();
+function showCode(){
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+  var code = Blockly.JavaScript.workspaceToCode(workSpace);
+  alert(code);
 }

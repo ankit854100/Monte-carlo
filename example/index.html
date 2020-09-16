@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Monte carlo method</title>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>MonteCarlo method of calculating 𝛑</h1>
+  </div>
+
+  <div class="buttons">
+    <button class="btn btn-secondary" onclick="showCode()">Show JavaScript</button>
+    <button class="btn btn-primary" onclick="runCode()">Run JavaScript</button>
+  </div>
+  
+  <!-- <main> -->
+    <div class="wrapper">
+      <div class="rectangle">
+        <canvas id="canvas"></canvas>
+
+        <table>
+          <tr class="border border-dark">
+            <th class="border border-dark" >inside points</th>
+            <th class="border border-dark" >outside points</th>
+            <th class="border border-dark" >total points</th>
+          </tr>
+          <tr >
+            <th id="inside" class="border border-dark ">0</th>
+            <th id="outside" class="border border-dark ">0</th>
+            <th id="total" class="border border-dark ">0</th>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <th class="border border-dark">value of 𝛑:</th>
+
+          </tr>
+          <tr>
+            <th class="border border-dark" id="pi">0</th>
+          </tr>
+        </table>
+
+      </div>
+
+      <div id="blocklyDiv"></div>
+      <xml id="toolbox" style="display: none">
+        <block type="calculate" ></block>
+      </xml>
+    </div>
+  <!-- </main> -->
+
+  <script src="https://unpkg.com/blockly"></script>
+  <script src="blocks.js"></script>
+  <script src="monte_carlo.js"></script>
+</body>
+</html>
